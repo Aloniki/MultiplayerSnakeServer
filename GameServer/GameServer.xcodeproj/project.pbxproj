@@ -1,0 +1,365 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		183C0A121C8DB4B100D94902 /* RoomInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183C0A101C8DB4B100D94902 /* RoomInfo.cpp */; };
+		185E85F11CBCC06900C46E3B /* RoomListManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 185E85EF1CBCC06900C46E3B /* RoomListManager.cpp */; };
+		185E85F81CBCEDD900C46E3B /* PortsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 185E85F61CBCEDD900C46E3B /* PortsManager.cpp */; };
+		185E85FB1CBD223200C46E3B /* DataPacketProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 185E85F91CBD223200C46E3B /* DataPacketProtocol.cpp */; };
+		185E86041CBD307900C46E3B /* ServerDaemon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 185E86021CBD307900C46E3B /* ServerDaemon.cpp */; };
+		185E86071CBD3A1200C46E3B /* IWClientServerDaemon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 185E86051CBD3A1200C46E3B /* IWClientServerDaemon.cpp */; };
+		185E860A1CBD3A1D00C46E3B /* IWRoomServerDaemon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 185E86081CBD3A1D00C46E3B /* IWRoomServerDaemon.cpp */; };
+		185E860E1CBDF10400C46E3B /* IWSingleRoleThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 185E860C1CBDF10400C46E3B /* IWSingleRoleThread.cpp */; };
+		187FDC111C8C1163009FC1D4 /* MainServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 187FDC101C8C1163009FC1D4 /* MainServer.cpp */; };
+		1895C4D01CBFA615004BF835 /* Handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1895C4CE1CBFA615004BF835 /* Handler.cpp */; };
+		1895C4D31CBFB8E9004BF835 /* IWRoomHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1895C4D11CBFB8E9004BF835 /* IWRoomHandler.cpp */; };
+		1895C4D61CBFBB41004BF835 /* IWClientHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1895C4D41CBFBB41004BF835 /* IWClientHandler.cpp */; };
+		18C0BF001C91622100199D23 /* JsonManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18C0BEFE1C91622100199D23 /* JsonManager.cpp */; };
+		18D18B7A1CBE682500F89991 /* Receiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D18B781CBE682500F89991 /* Receiver.cpp */; };
+		18E83C051C9276070084D6FA /* NetworkSignalPackager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18E83C031C9276070084D6FA /* NetworkSignalPackager.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		187FDC0B1C8C1163009FC1D4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		183C0A101C8DB4B100D94902 /* RoomInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RoomInfo.cpp; sourceTree = "<group>"; };
+		185E85EF1CBCC06900C46E3B /* RoomListManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RoomListManager.cpp; sourceTree = "<group>"; };
+		185E85F01CBCC06900C46E3B /* RoomListManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RoomListManager.hpp; sourceTree = "<group>"; };
+		185E85F61CBCEDD900C46E3B /* PortsManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PortsManager.cpp; sourceTree = "<group>"; };
+		185E85F71CBCEDD900C46E3B /* PortsManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PortsManager.hpp; sourceTree = "<group>"; };
+		185E85F91CBD223200C46E3B /* DataPacketProtocol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DataPacketProtocol.cpp; sourceTree = "<group>"; };
+		185E85FA1CBD223200C46E3B /* DataPacketProtocol.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DataPacketProtocol.hpp; sourceTree = "<group>"; };
+		185E86021CBD307900C46E3B /* ServerDaemon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ServerDaemon.cpp; sourceTree = "<group>"; };
+		185E86031CBD307900C46E3B /* ServerDaemon.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ServerDaemon.hpp; sourceTree = "<group>"; };
+		185E86051CBD3A1200C46E3B /* IWClientServerDaemon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IWClientServerDaemon.cpp; sourceTree = "<group>"; };
+		185E86061CBD3A1200C46E3B /* IWClientServerDaemon.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IWClientServerDaemon.hpp; sourceTree = "<group>"; };
+		185E86081CBD3A1D00C46E3B /* IWRoomServerDaemon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IWRoomServerDaemon.cpp; sourceTree = "<group>"; };
+		185E86091CBD3A1D00C46E3B /* IWRoomServerDaemon.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IWRoomServerDaemon.hpp; sourceTree = "<group>"; };
+		185E860C1CBDF10400C46E3B /* IWSingleRoleThread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IWSingleRoleThread.cpp; sourceTree = "<group>"; };
+		185E860D1CBDF10400C46E3B /* IWSingleRoleThread.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IWSingleRoleThread.hpp; sourceTree = "<group>"; };
+		187FDC0D1C8C1163009FC1D4 /* GameServer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GameServer; sourceTree = BUILT_PRODUCTS_DIR; };
+		187FDC101C8C1163009FC1D4 /* MainServer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MainServer.cpp; sourceTree = "<group>"; };
+		187FDC171C8C116E009FC1D4 /* GameHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameHeaders.h; sourceTree = "<group>"; };
+		1895C4CE1CBFA615004BF835 /* Handler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Handler.cpp; sourceTree = "<group>"; };
+		1895C4CF1CBFA615004BF835 /* Handler.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Handler.hpp; sourceTree = "<group>"; };
+		1895C4D11CBFB8E9004BF835 /* IWRoomHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IWRoomHandler.cpp; sourceTree = "<group>"; };
+		1895C4D21CBFB8E9004BF835 /* IWRoomHandler.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IWRoomHandler.hpp; sourceTree = "<group>"; };
+		1895C4D41CBFBB41004BF835 /* IWClientHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IWClientHandler.cpp; sourceTree = "<group>"; };
+		1895C4D51CBFBB41004BF835 /* IWClientHandler.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IWClientHandler.hpp; sourceTree = "<group>"; };
+		18A2670A1C9172C5008F5F91 /* RoomInfo.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = RoomInfo.hpp; sourceTree = "<group>"; };
+		18C0BEFE1C91622100199D23 /* JsonManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JsonManager.cpp; sourceTree = "<group>"; };
+		18C0BEFF1C91622100199D23 /* JsonManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = JsonManager.hpp; sourceTree = "<group>"; };
+		18D18B781CBE682500F89991 /* Receiver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Receiver.cpp; sourceTree = "<group>"; };
+		18D18B791CBE682500F89991 /* Receiver.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Receiver.hpp; sourceTree = "<group>"; };
+		18E83C031C9276070084D6FA /* NetworkSignalPackager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetworkSignalPackager.cpp; sourceTree = "<group>"; };
+		18E83C041C9276070084D6FA /* NetworkSignalPackager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NetworkSignalPackager.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		187FDC0A1C8C1163009FC1D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		185E85FC1CBD233E00C46E3B /* ProtocolManagers */ = {
+			isa = PBXGroup;
+			children = (
+				185E85F91CBD223200C46E3B /* DataPacketProtocol.cpp */,
+				185E85FA1CBD223200C46E3B /* DataPacketProtocol.hpp */,
+				18E83C031C9276070084D6FA /* NetworkSignalPackager.cpp */,
+				18E83C041C9276070084D6FA /* NetworkSignalPackager.hpp */,
+				18C0BEFE1C91622100199D23 /* JsonManager.cpp */,
+				18C0BEFF1C91622100199D23 /* JsonManager.hpp */,
+			);
+			name = ProtocolManagers;
+			sourceTree = "<group>";
+		};
+		185E86001CBD23CD00C46E3B /* EntityManagers */ = {
+			isa = PBXGroup;
+			children = (
+				185E85EF1CBCC06900C46E3B /* RoomListManager.cpp */,
+				185E85F01CBCC06900C46E3B /* RoomListManager.hpp */,
+				185E85F61CBCEDD900C46E3B /* PortsManager.cpp */,
+				185E85F71CBCEDD900C46E3B /* PortsManager.hpp */,
+			);
+			name = EntityManagers;
+			sourceTree = "<group>";
+		};
+		185E86011CBD306F00C46E3B /* Daemon */ = {
+			isa = PBXGroup;
+			children = (
+				185E860B1CBDF09200C46E3B /* IWSingleRoleThread */,
+				185E86021CBD307900C46E3B /* ServerDaemon.cpp */,
+				185E86031CBD307900C46E3B /* ServerDaemon.hpp */,
+				185E86051CBD3A1200C46E3B /* IWClientServerDaemon.cpp */,
+				185E86061CBD3A1200C46E3B /* IWClientServerDaemon.hpp */,
+				185E86081CBD3A1D00C46E3B /* IWRoomServerDaemon.cpp */,
+				185E86091CBD3A1D00C46E3B /* IWRoomServerDaemon.hpp */,
+			);
+			name = Daemon;
+			sourceTree = "<group>";
+		};
+		185E860B1CBDF09200C46E3B /* IWSingleRoleThread */ = {
+			isa = PBXGroup;
+			children = (
+				185E860C1CBDF10400C46E3B /* IWSingleRoleThread.cpp */,
+				185E860D1CBDF10400C46E3B /* IWSingleRoleThread.hpp */,
+				18D18B781CBE682500F89991 /* Receiver.cpp */,
+				18D18B791CBE682500F89991 /* Receiver.hpp */,
+				1895C4CE1CBFA615004BF835 /* Handler.cpp */,
+				1895C4CF1CBFA615004BF835 /* Handler.hpp */,
+				1895C4D11CBFB8E9004BF835 /* IWRoomHandler.cpp */,
+				1895C4D21CBFB8E9004BF835 /* IWRoomHandler.hpp */,
+				1895C4D41CBFBB41004BF835 /* IWClientHandler.cpp */,
+				1895C4D51CBFBB41004BF835 /* IWClientHandler.hpp */,
+			);
+			name = IWSingleRoleThread;
+			sourceTree = "<group>";
+		};
+		187FDC041C8C1163009FC1D4 = {
+			isa = PBXGroup;
+			children = (
+				187FDC0F1C8C1163009FC1D4 /* GameServer */,
+				187FDC0E1C8C1163009FC1D4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		187FDC0E1C8C1163009FC1D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				187FDC0D1C8C1163009FC1D4 /* GameServer */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		187FDC0F1C8C1163009FC1D4 /* GameServer */ = {
+			isa = PBXGroup;
+			children = (
+				187FDC171C8C116E009FC1D4 /* GameHeaders.h */,
+				185E86011CBD306F00C46E3B /* Daemon */,
+				185E86001CBD23CD00C46E3B /* EntityManagers */,
+				185E85FC1CBD233E00C46E3B /* ProtocolManagers */,
+				187FDC101C8C1163009FC1D4 /* MainServer.cpp */,
+				18A2670A1C9172C5008F5F91 /* RoomInfo.hpp */,
+				183C0A101C8DB4B100D94902 /* RoomInfo.cpp */,
+			);
+			path = GameServer;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		187FDC0C1C8C1163009FC1D4 /* GameServer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 187FDC141C8C1163009FC1D4 /* Build configuration list for PBXNativeTarget "GameServer" */;
+			buildPhases = (
+				187FDC091C8C1163009FC1D4 /* Sources */,
+				187FDC0A1C8C1163009FC1D4 /* Frameworks */,
+				187FDC0B1C8C1163009FC1D4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GameServer;
+			productName = GameServer;
+			productReference = 187FDC0D1C8C1163009FC1D4 /* GameServer */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		187FDC051C8C1163009FC1D4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Aloniki's Study";
+				TargetAttributes = {
+					187FDC0C1C8C1163009FC1D4 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 187FDC081C8C1163009FC1D4 /* Build configuration list for PBXProject "GameServer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 187FDC041C8C1163009FC1D4;
+			productRefGroup = 187FDC0E1C8C1163009FC1D4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				187FDC0C1C8C1163009FC1D4 /* GameServer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		187FDC091C8C1163009FC1D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				185E85F11CBCC06900C46E3B /* RoomListManager.cpp in Sources */,
+				185E860E1CBDF10400C46E3B /* IWSingleRoleThread.cpp in Sources */,
+				185E85F81CBCEDD900C46E3B /* PortsManager.cpp in Sources */,
+				1895C4D01CBFA615004BF835 /* Handler.cpp in Sources */,
+				18E83C051C9276070084D6FA /* NetworkSignalPackager.cpp in Sources */,
+				185E860A1CBD3A1D00C46E3B /* IWRoomServerDaemon.cpp in Sources */,
+				185E85FB1CBD223200C46E3B /* DataPacketProtocol.cpp in Sources */,
+				18D18B7A1CBE682500F89991 /* Receiver.cpp in Sources */,
+				187FDC111C8C1163009FC1D4 /* MainServer.cpp in Sources */,
+				185E86071CBD3A1200C46E3B /* IWClientServerDaemon.cpp in Sources */,
+				185E86041CBD307900C46E3B /* ServerDaemon.cpp in Sources */,
+				1895C4D31CBFB8E9004BF835 /* IWRoomHandler.cpp in Sources */,
+				18C0BF001C91622100199D23 /* JsonManager.cpp in Sources */,
+				183C0A121C8DB4B100D94902 /* RoomInfo.cpp in Sources */,
+				1895C4D61CBFBB41004BF835 /* IWClientHandler.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		187FDC121C8C1163009FC1D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = /usr/include;
+			};
+			name = Debug;
+		};
+		187FDC131C8C1163009FC1D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = /usr/include;
+			};
+			name = Release;
+		};
+		187FDC151C8C1163009FC1D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		187FDC161C8C1163009FC1D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		187FDC081C8C1163009FC1D4 /* Build configuration list for PBXProject "GameServer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				187FDC121C8C1163009FC1D4 /* Debug */,
+				187FDC131C8C1163009FC1D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		187FDC141C8C1163009FC1D4 /* Build configuration list for PBXNativeTarget "GameServer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				187FDC151C8C1163009FC1D4 /* Debug */,
+				187FDC161C8C1163009FC1D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 187FDC051C8C1163009FC1D4 /* Project object */;
+}
