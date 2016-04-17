@@ -14,10 +14,12 @@
 #include <arpa/inet.h>
 #include <pthread.h>
 #include <vector>
+#include "IWSingleRoleThread.hpp"
 
 class ServerDaemon {
 protected:
     int                 iwRole;
+    in_port_t           port;
     
     int                 listenfd;
     int                 connfd;
@@ -26,16 +28,26 @@ protected:
     struct sockaddr_in  servaddr;
     std::vector<pthread_t>* tidList;
     
-    ServerDaemon(){
+    ServerDaemon(int role){
         this->tidList = new std::vector<pthread_t>();
+        switch (role) {
+            case CLIENTROLE:
+                this->port = IBSCPort;
+                break;
+            case ROOMROLE:
+                this->port = IBSRPort;
+                break;
+            default:
+                break;
+        }
     }
     ~ServerDaemon(){
         delete tidList;
     }
 public:
     bool initDaemon(in_port_t);
-    virtual void run(){};
-    virtual void* newIWSingleRoleThread(void*){return (void*)0;};
+    void run();
+    void* newIWSingleRoleThread(void*);
 };
 
 #endif /* ServerDaemon_hpp */

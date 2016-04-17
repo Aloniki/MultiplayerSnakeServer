@@ -8,6 +8,14 @@
 
 #include "ServerDaemon.hpp"
 
+
+void* iwSingleRoleThreadWrapper(void* arg){
+    ServerDaemon* pthis = (ServerDaemon*)arg;
+    pthis->newIWSingleRoleThread(NULL);
+    pthread_exit(NULL);
+}
+
+
 bool ServerDaemon::initDaemon(in_port_t port){
     //establish socket
     listenfd = socket(AF_INET, SOCK_STREAM, 0);
@@ -34,4 +42,35 @@ bool ServerDaemon::initDaemon(in_port_t port){
     }
     
     return true;
+}
+
+void ServerDaemon::run(){
+    initDaemon(IWClientPort);
+    for (; ; ) {
+        this->clilen = sizeof(this->cliaddr);
+        this->connfd = accept(this->listenfd, (struct sockaddr*)&(this->cliaddr), &(this->clilen));
+        
+        char addr[MAXLINE];
+        
+        inet_ntop(AF_INET, &cliaddr.sin_addr, addr, sizeof(addr));
+        printf("signal comes from%s:%d\n",addr,ntohs(cliaddr.sin_port));
+        fflush(stdout);
+        
+        pthread_t tidSingleRole;
+        pthread_create(&tidSingleRole, NULL, iwSingleRoleThreadWrapper, this);
+        this->tidList->push_back(tidSingleRole);
+        
+        std::cout<<"new thread!!"<<std::endl;
+        
+        //        pthread_join(tidSingleRole, NULL);
+    }
+}
+
+void* ServerDaemon::newIWSingleRoleThread(void* arg){
+    auto iwst = new IWSingleRoleThread(this->connfd, this->iwRole);
+    iwst->run();
+    //    pause();
+    std::cout<<"after read!"<<std::endl;
+    
+    return (void*)0;
 }

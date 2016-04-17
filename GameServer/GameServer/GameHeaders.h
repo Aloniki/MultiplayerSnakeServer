@@ -13,7 +13,9 @@
 #include "JsonManager.hpp"
 
 #define ServIPAddr "127.0.0.1"
-#define IWClientPort 9997
+#define IBSCPort 9997
+#define IBSRPort 9998
+#define IBCRPort 9999
 
 #define MAXLINE         9999
 #define LISTENQ         10

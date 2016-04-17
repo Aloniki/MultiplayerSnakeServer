@@ -28,7 +28,7 @@ void init(){
     RM = RoomListManager::getRoomListManager();
     PM = PortsManager::getPortsManager();
     
-    iwClientServerDaemon = (ServerDaemon*)IWClientServerDaemon::getServerDaemon();
+    iwClientServerDaemon = new ServerDaemon();
 }
 
 void* interactWithClient(void* arg){
