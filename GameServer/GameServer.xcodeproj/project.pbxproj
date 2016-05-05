@@ -12,8 +12,6 @@
 		185E85F81CBCEDD900C46E3B /* PortsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 185E85F61CBCEDD900C46E3B /* PortsManager.cpp */; };
 		185E85FB1CBD223200C46E3B /* DataPacketProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 185E85F91CBD223200C46E3B /* DataPacketProtocol.cpp */; };
 		185E86041CBD307900C46E3B /* ServerDaemon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 185E86021CBD307900C46E3B /* ServerDaemon.cpp */; };
-		185E86071CBD3A1200C46E3B /* IWClientServerDaemon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 185E86051CBD3A1200C46E3B /* IWClientServerDaemon.cpp */; };
-		185E860A1CBD3A1D00C46E3B /* IWRoomServerDaemon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 185E86081CBD3A1D00C46E3B /* IWRoomServerDaemon.cpp */; };
 		185E860E1CBDF10400C46E3B /* IWSingleRoleThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 185E860C1CBDF10400C46E3B /* IWSingleRoleThread.cpp */; };
 		187FDC111C8C1163009FC1D4 /* MainServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 187FDC101C8C1163009FC1D4 /* MainServer.cpp */; };
 		1895C4D01CBFA615004BF835 /* Handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1895C4CE1CBFA615004BF835 /* Handler.cpp */; };
@@ -21,7 +19,6 @@
 		1895C4D61CBFBB41004BF835 /* IWClientHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1895C4D41CBFBB41004BF835 /* IWClientHandler.cpp */; };
 		18C0BF001C91622100199D23 /* JsonManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18C0BEFE1C91622100199D23 /* JsonManager.cpp */; };
 		18D18B7A1CBE682500F89991 /* Receiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D18B781CBE682500F89991 /* Receiver.cpp */; };
-		18E83C051C9276070084D6FA /* NetworkSignalPackager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18E83C031C9276070084D6FA /* NetworkSignalPackager.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,10 +43,6 @@
 		185E85FA1CBD223200C46E3B /* DataPacketProtocol.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DataPacketProtocol.hpp; sourceTree = "<group>"; };
 		185E86021CBD307900C46E3B /* ServerDaemon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ServerDaemon.cpp; sourceTree = "<group>"; };
 		185E86031CBD307900C46E3B /* ServerDaemon.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ServerDaemon.hpp; sourceTree = "<group>"; };
-		185E86051CBD3A1200C46E3B /* IWClientServerDaemon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IWClientServerDaemon.cpp; sourceTree = "<group>"; };
-		185E86061CBD3A1200C46E3B /* IWClientServerDaemon.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IWClientServerDaemon.hpp; sourceTree = "<group>"; };
-		185E86081CBD3A1D00C46E3B /* IWRoomServerDaemon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IWRoomServerDaemon.cpp; sourceTree = "<group>"; };
-		185E86091CBD3A1D00C46E3B /* IWRoomServerDaemon.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IWRoomServerDaemon.hpp; sourceTree = "<group>"; };
 		185E860C1CBDF10400C46E3B /* IWSingleRoleThread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IWSingleRoleThread.cpp; sourceTree = "<group>"; };
 		185E860D1CBDF10400C46E3B /* IWSingleRoleThread.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IWSingleRoleThread.hpp; sourceTree = "<group>"; };
 		187FDC0D1C8C1163009FC1D4 /* GameServer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GameServer; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,8 +59,6 @@
 		18C0BEFF1C91622100199D23 /* JsonManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = JsonManager.hpp; sourceTree = "<group>"; };
 		18D18B781CBE682500F89991 /* Receiver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Receiver.cpp; sourceTree = "<group>"; };
 		18D18B791CBE682500F89991 /* Receiver.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Receiver.hpp; sourceTree = "<group>"; };
-		18E83C031C9276070084D6FA /* NetworkSignalPackager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetworkSignalPackager.cpp; sourceTree = "<group>"; };
-		18E83C041C9276070084D6FA /* NetworkSignalPackager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NetworkSignalPackager.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,13 +72,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1808EB981CDAF1A100E4407F /* Receiver */ = {
+			isa = PBXGroup;
+			children = (
+				18D18B781CBE682500F89991 /* Receiver.cpp */,
+				18D18B791CBE682500F89991 /* Receiver.hpp */,
+			);
+			name = Receiver;
+			sourceTree = "<group>";
+		};
+		1808EB991CDAF1B600E4407F /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+				1895C4CE1CBFA615004BF835 /* Handler.cpp */,
+				1895C4CF1CBFA615004BF835 /* Handler.hpp */,
+				1895C4D11CBFB8E9004BF835 /* IWRoomHandler.cpp */,
+				1895C4D21CBFB8E9004BF835 /* IWRoomHandler.hpp */,
+				1895C4D41CBFBB41004BF835 /* IWClientHandler.cpp */,
+				1895C4D51CBFBB41004BF835 /* IWClientHandler.hpp */,
+			);
+			name = Handler;
+			sourceTree = "<group>";
+		};
 		185E85FC1CBD233E00C46E3B /* ProtocolManagers */ = {
 			isa = PBXGroup;
 			children = (
 				185E85F91CBD223200C46E3B /* DataPacketProtocol.cpp */,
 				185E85FA1CBD223200C46E3B /* DataPacketProtocol.hpp */,
-				18E83C031C9276070084D6FA /* NetworkSignalPackager.cpp */,
-				18E83C041C9276070084D6FA /* NetworkSignalPackager.hpp */,
 				18C0BEFE1C91622100199D23 /* JsonManager.cpp */,
 				18C0BEFF1C91622100199D23 /* JsonManager.hpp */,
 			);
@@ -108,13 +119,9 @@
 		185E86011CBD306F00C46E3B /* Daemon */ = {
 			isa = PBXGroup;
 			children = (
-				185E860B1CBDF09200C46E3B /* IWSingleRoleThread */,
 				185E86021CBD307900C46E3B /* ServerDaemon.cpp */,
 				185E86031CBD307900C46E3B /* ServerDaemon.hpp */,
-				185E86051CBD3A1200C46E3B /* IWClientServerDaemon.cpp */,
-				185E86061CBD3A1200C46E3B /* IWClientServerDaemon.hpp */,
-				185E86081CBD3A1D00C46E3B /* IWRoomServerDaemon.cpp */,
-				185E86091CBD3A1D00C46E3B /* IWRoomServerDaemon.hpp */,
+				185E860B1CBDF09200C46E3B /* IWSingleRoleThread */,
 			);
 			name = Daemon;
 			sourceTree = "<group>";
@@ -124,14 +131,8 @@
 			children = (
 				185E860C1CBDF10400C46E3B /* IWSingleRoleThread.cpp */,
 				185E860D1CBDF10400C46E3B /* IWSingleRoleThread.hpp */,
-				18D18B781CBE682500F89991 /* Receiver.cpp */,
-				18D18B791CBE682500F89991 /* Receiver.hpp */,
-				1895C4CE1CBFA615004BF835 /* Handler.cpp */,
-				1895C4CF1CBFA615004BF835 /* Handler.hpp */,
-				1895C4D11CBFB8E9004BF835 /* IWRoomHandler.cpp */,
-				1895C4D21CBFB8E9004BF835 /* IWRoomHandler.hpp */,
-				1895C4D41CBFBB41004BF835 /* IWClientHandler.cpp */,
-				1895C4D51CBFBB41004BF835 /* IWClientHandler.hpp */,
+				1808EB981CDAF1A100E4407F /* Receiver */,
+				1808EB991CDAF1B600E4407F /* Handler */,
 			);
 			name = IWSingleRoleThread;
 			sourceTree = "<group>";
@@ -226,12 +227,9 @@
 				185E860E1CBDF10400C46E3B /* IWSingleRoleThread.cpp in Sources */,
 				185E85F81CBCEDD900C46E3B /* PortsManager.cpp in Sources */,
 				1895C4D01CBFA615004BF835 /* Handler.cpp in Sources */,
-				18E83C051C9276070084D6FA /* NetworkSignalPackager.cpp in Sources */,
-				185E860A1CBD3A1D00C46E3B /* IWRoomServerDaemon.cpp in Sources */,
 				185E85FB1CBD223200C46E3B /* DataPacketProtocol.cpp in Sources */,
 				18D18B7A1CBE682500F89991 /* Receiver.cpp in Sources */,
 				187FDC111C8C1163009FC1D4 /* MainServer.cpp in Sources */,
-				185E86071CBD3A1200C46E3B /* IWClientServerDaemon.cpp in Sources */,
 				185E86041CBD307900C46E3B /* ServerDaemon.cpp in Sources */,
 				1895C4D31CBFB8E9004BF835 /* IWRoomHandler.cpp in Sources */,
 				18C0BF001C91622100199D23 /* JsonManager.cpp in Sources */,

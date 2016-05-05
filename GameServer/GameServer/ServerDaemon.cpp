@@ -8,15 +8,23 @@
 
 #include "ServerDaemon.hpp"
 
-
+/**
+ *  thread recall wrapper, it is used to call the true handle method
+ *
+ *  @param arg this
+ *
+ *  @return void
+ */
 void* iwSingleRoleThreadWrapper(void* arg){
     ServerDaemon* pthis = (ServerDaemon*)arg;
     pthis->newIWSingleRoleThread(NULL);
     pthread_exit(NULL);
 }
 
-
-bool ServerDaemon::initDaemon(in_port_t port){
+/**
+ initialize daemon; set up socket listen
+ */
+bool ServerDaemon::initDaemon(){
     //establish socket
     listenfd = socket(AF_INET, SOCK_STREAM, 0);
     if (-1 == listenfd) {
@@ -27,7 +35,7 @@ bool ServerDaemon::initDaemon(in_port_t port){
     bzero(&this->servaddr,sizeof(this->servaddr));
     this->servaddr.sin_family         = AF_INET;
     this->servaddr.sin_addr.s_addr    = htonl(INADDR_ANY);
-    this->servaddr.sin_port           = htons(port);
+    this->servaddr.sin_port           = htons(this->port);
     //bind server address
     auto bindResult = bind(this->listenfd, (struct sockaddr*)&(this->servaddr), sizeof(this->servaddr));
     if (-1 == bindResult) {
@@ -44,8 +52,11 @@ bool ServerDaemon::initDaemon(in_port_t port){
     return true;
 }
 
+/**
+ *  run daemon. set up sokcet connection and creat new handle threads
+ */
 void ServerDaemon::run(){
-    initDaemon(IWClientPort);
+    initDaemon();
     for (; ; ) {
         this->clilen = sizeof(this->cliaddr);
         this->connfd = accept(this->listenfd, (struct sockaddr*)&(this->cliaddr), &(this->clilen));
@@ -66,6 +77,13 @@ void ServerDaemon::run(){
     }
 }
 
+/**
+ *  run a thread to interact with role
+ *
+ *  @param arg void
+ *
+ *  @return void
+ */
 void* ServerDaemon::newIWSingleRoleThread(void* arg){
     auto iwst = new IWSingleRoleThread(this->connfd, this->iwRole);
     iwst->run();

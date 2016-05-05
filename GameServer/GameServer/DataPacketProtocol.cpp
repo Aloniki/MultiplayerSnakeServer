@@ -9,6 +9,15 @@
 #include "DataPacketProtocol.hpp"
 using namespace std;
 
+/**
+ *  pack the raw data to formal data packet
+ *
+ *  @param role   who send these data
+ *  @param type   what is the operation type
+ *  @param rawStr the main content
+ *
+ *  @return a formal data packet string
+ */
 string DataPacketProtocol::Pack(int role, int type, std::string *rawStr){
     size_t length = rawStr->length() + PACKETHEADLENGTH;
 
@@ -21,6 +30,13 @@ string DataPacketProtocol::Pack(int role, int type, std::string *rawStr){
     return ss.str();
 }
 
+/**
+ *  unpack a formal data packet string to a data packet instance
+ *
+ *  @param dataPacket a formal data packet string
+ *
+ *  @return a data packet instance
+ */
 DataPacket DataPacketProtocol::Unpack(std::string *dataPacket){
     //get the raw string
     DataPacket packet;

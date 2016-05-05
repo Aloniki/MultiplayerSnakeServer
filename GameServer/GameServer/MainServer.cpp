@@ -14,100 +14,73 @@
 #include "NetworkSignalPackager.hpp"
 #include "RoomListManager.hpp"
 #include "PortsManager.hpp"
-#include "IWClientServerDaemon.hpp"
+#include "ServerDaemon.hpp"
 
-RoomListManager* RM;
-PortsManager* PM;
+#define SELFROLE SERVERROLE     //self role
 
-ServerDaemon* iwClientServerDaemon;
+RoomListManager* RM;    //room list manager instance
+PortsManager* PM;       //ports manager instance
 
+ServerDaemon* iwClientServerDaemon;     //a server dameon that is interacting with client
+ServerDaemon* iwRoomServerDaemon;       //a server dameon that is interacting with room
+
+//interaction thread IDs
 pthread_t tidIWClient;
 pthread_t tidIWRoom;
 
+/**
+ Initialize RoomListManager, PortsManager and server daemons
+ 
+ - returns: void
+ */
 void init(){
     RM = RoomListManager::getRoomListManager();
     PM = PortsManager::getPortsManager();
-    
-    iwClientServerDaemon = new ServerDaemon();
+    iwClientServerDaemon = new ServerDaemon(CLIENTROLE);
+    iwRoomServerDaemon = new ServerDaemon(ROOMROLE);
 }
 
+/**
+ *  run a new server daemon to interact with client
+ *
+ *  @param arg void
+ *
+ *  @return void
+ */
 void* interactWithClient(void* arg){
     iwClientServerDaemon->run();
     pthread_exit(NULL);
 }
 
+/**
+ *  run a new server daemon to interact with room
+ *
+ *  @param arg void
+ *
+ *  @return void
+ */
 void* interactWithRoom(void* arg){
     pthread_exit(NULL);
 }
 
+
+/**
+ *  main logic method
+ *
+ *  @param argc the number of startup args
+ *  @param argv startup args
+ *
+ *  @return 0
+ */
 int main(int argc, const char * argv[]) {
+    //initialize
     init();
+    //create new threads to run server daemons
     pthread_create(&tidIWClient, NULL, interactWithClient, NULL);
     pthread_create(&tidIWRoom, NULL, interactWithRoom, NULL);
-    
+    //waiting for these threads
     pthread_join(tidIWClient, NULL);
     pthread_join(tidIWRoom, NULL);
-    
-    
-//    //insert code here...
-//    int         listenfd, connfd;
-//    socklen_t   clilen;
-//    static OperationSignal signal;
-//    struct sockaddr_in cliaddr,servaddr;
-//    
-//    listenfd = socket(AF_INET, SOCK_STREAM, 0);
-//    
-//    bzero(&servaddr,sizeof(servaddr));
-//    servaddr.sin_family         = AF_INET;
-//    servaddr.sin_addr.s_addr    = htonl(INADDR_ANY);
-//    servaddr.sin_port           = htons(ServRoomsPort);
-//    
-//    bind(listenfd, (struct sockaddr*)&servaddr, sizeof(servaddr));
-//    listen(listenfd, LISTENQ);
-//    
-//    for (; ; ) {
-//        clilen = sizeof(cliaddr);
-//        connfd = accept(listenfd, (struct sockaddr*)&cliaddr, &clilen);
-////        if ((childpid = fork()) == 0){
-//            ssize_t n;
-//            char addr[MAXLINE];
-//            while (1) {
-//                if ((n = read(connfd, &signal, sizeof(signal))) > 0){
-//                    
-//                    inet_ntop(AF_INET, &cliaddr.sin_addr, addr, sizeof(addr));
-//                    printf("recv code:%d, signal comes from%s:%d",signal,addr,ntohs(cliaddr.sin_port));
-//                    fflush(stdout);
-//                    
-//                    RoomInfo room;
-//                    room.setRoomID(12345);
-//                    room.setRoomAddr("114.215.136.180:9999");
-//                    room.setHoster("皮尼斯鳗鱼");
-//                    RM->addNewRoom(&room);
-//                    auto ril = RM->getRoomList();
-//                    for (auto itor = ril->begin(); itor != ril->end(); itor++) {
-//                        printf("roomID:%d, roomAddr:%s, hoster:%s",itor->getRoomID(),itor->getRoomAddr().c_str(),itor->getHoster().c_str());
-//                    }
-//                    auto port = PM->popAvailablePort();
-//                    printf("get an available port:%d",port);
-//                    port = PM->popAvailablePort();
-//                    printf("get an available port:%d",port);
-//                    PM->pushAvailablePort(5999);
-//                    port = PM->popAvailablePort();
-//                    printf("get an available port:%d",port);
-//                    
-//                    std::string jResult;
-//                    JsonManager::RoomInfoToJson(&room, jResult);
-//                    printf("aa%s",jResult.c_str());
-//                    fflush(stdout);
-//                    char netSignal[MAXLINE];
-//                    NetworkSignalPackager::Pack(&jResult, netSignal);
-//                    ssize_t d;
-//                    //auto c = jResult.c_str();
-//                    d =write(connfd, netSignal, strlen(netSignal));
-//                    printf("continue!!!!");
-//                    fflush(stdout);
-//                }
-//            }
-////        }
-//    }
+    //end this program
+    exit(0);
 }

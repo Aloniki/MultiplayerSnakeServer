@@ -16,21 +16,30 @@
 #include <vector>
 #include "IWSingleRoleThread.hpp"
 
+/// ServerDaemon class
 class ServerDaemon {
 protected:
-    int                 iwRole;
-    in_port_t           port;
+    int                 iwRole;     //the role that is interacting with
+    in_port_t           port;       //using port
     
-    int                 listenfd;
-    int                 connfd;
-    socklen_t           clilen;
-    struct sockaddr_in  cliaddr;
-    struct sockaddr_in  servaddr;
-    std::vector<pthread_t>* tidList;
+    int                 listenfd;   //listen socket descriptor
+    int                 connfd;     //connect socket dscriptor
+    socklen_t           clilen;     //address length
+    struct sockaddr_in  cliaddr;    //socket address
+    struct sockaddr_in  servaddr;   //server socket address
     
-    ServerDaemon(int role){
+    std::vector<pthread_t>* tidList;    //threads IDs list
+    
+    ~ServerDaemon(){    //destructor
+        delete tidList;
+    }
+    
+public:
+    ServerDaemon(int iwRole){   //structor
         this->tidList = new std::vector<pthread_t>();
-        switch (role) {
+        this->iwRole = iwRole;
+        //define the using port basing on interacting role
+        switch (iwRole) {
             case CLIENTROLE:
                 this->port = IBSCPort;
                 break;
@@ -41,13 +50,9 @@ protected:
                 break;
         }
     }
-    ~ServerDaemon(){
-        delete tidList;
-    }
-public:
-    bool initDaemon(in_port_t);
-    void run();
-    void* newIWSingleRoleThread(void*);
+    bool initDaemon();      //initialize daemon
+    void run();     //run daemon
+    void* newIWSingleRoleThread(void*);     //run a new thread to interact with role
 };
 
 #endif /* ServerDaemon_hpp */

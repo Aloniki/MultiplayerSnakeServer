@@ -22,17 +22,10 @@
 /**
  OperationSignalTypes----------string version
  */
-#define sEXIT            "EXIT"
-#define sREQUIRE         "REQUIRE"
-#define sCREATE          "CREATE"
-#define sJOIN            "JOIN"
+//#define sEXIT            "EXIT"
+//#define sREQUIRE         "REQUIRE"
+//#define sCREATE          "CREATE"
+//#define sJOIN            "JOIN"
 
-enum OperationSignal{
-    INVALID     =  -1,
-    EXIT        =   0,
-    REQUIRE     =   1,
-    CREATE      =   2,
-    JOIN        =   3,
-};
 
 #endif /* GameHeaders_h */

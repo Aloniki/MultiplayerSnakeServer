@@ -11,7 +11,7 @@
 void IWRoomHandler::handle(){
     while (true) {
         if (this->packetQueue->empty()) {
-            pause();
+//            pause();
         }
         
         auto packet = this->pickFromPacketQueue();

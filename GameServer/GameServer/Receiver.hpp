@@ -13,8 +13,13 @@
 #include <vector>
 #include <queue>
 #include <pthread.h>
-#include <iostream>
+#include <unistd.h>
+//#include <iostream>
 
+/*
+//this class defines a common receiver; it is used to receiver TCP flows and convert them into
+//formal data packets
+*/
 class Receiver {
 protected:
     int connectfd;                      //socket connection identifier
@@ -27,14 +32,14 @@ protected:
     
     std::queue<DataPacket>* packetQueue; //saves the formal packet
 public:
-    Receiver(int fd, std::queue<DataPacket>* packetQueue){
+    Receiver(int fd, std::queue<DataPacket>* packetQueue){      //structor
         this->connectfd = fd;
         this->packetQueue = packetQueue;
         this->recvCount = 0;
         this->packetLength = 0;
     }
-    void receive();
-    void addToPacketQueue(std::string*);
+    void receive();     //receive TCP flows
+    void addToPacketQueue(std::string*); //add & convert received data into the queue of packets
 };
 
 #endif /* Receiver_hpp */

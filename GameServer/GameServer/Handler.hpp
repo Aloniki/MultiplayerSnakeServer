@@ -14,25 +14,29 @@
 #include <iostream>
 #include "RoomListManager.hpp"
 #include "PortsManager.hpp"
+#include <unistd.h>
 
-
+/*
+ this is class define the basic hanlder, specific handlers can inherit this class and over write
+ the handle() method to cater for different needs
+ */
 class Handler {
 protected:
     int connectfd;                      //socket connection identifier
     std::queue<DataPacket>* packetQueue; //saves the formal packet
     
-    RoomListManager* RM;
-    PortsManager* PM;
+    RoomListManager* RM;        //room list manager instance
+    PortsManager* PM;           //ports manager instance
     
 public:
-    Handler(int fd, std::queue<DataPacket>* packetQueue){
+    Handler(int fd, std::queue<DataPacket>* packetQueue){       //structor
         this->connectfd = fd;
         this->packetQueue = packetQueue;
         this->RM = RoomListManager::getRoomListManager();
         this->PM = PortsManager::getPortsManager();
     };
-    virtual void handle(){};
-    DataPacket pickFromPacketQueue();
+    virtual void handle(){};    //virtual handle method
+    DataPacket pickFromPacketQueue();   //pick the top data packet form the queue
     
 };
 

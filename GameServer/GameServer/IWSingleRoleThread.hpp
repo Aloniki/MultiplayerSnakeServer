@@ -17,42 +17,53 @@
 #include "Receiver.hpp"
 #include "Handler.hpp"
 #include "IWClientHandler.hpp"
+#include "IWRoomHandler.hpp"
 
+/// this class defines a thread to interact with roles
 class IWSingleRoleThread {
 protected:
-    int connectfd;
+    int connectfd;      //socket connection descriptor
     
-    std::queue<DataPacket>* packetQueue;
+    int iwRole;         //the role that is interacting with
+    
+    std::queue<DataPacket>* packetQueue;    //the queue of received data packets
+    
+    //thread IDs of receiver & handler
     pthread_t tidReceiver;
     pthread_t tidHandler;
     
     Receiver* receiver;
     Handler* handler;
 public:
-    IWSingleRoleThread(int fd, int role){
+    IWSingleRoleThread(int fd, int iwRole){     //structor
         this->connectfd = fd;
+        this->iwRole = iwRole;
+        
         packetQueue = new std::queue<DataPacket>();
+        
         receiver = new Receiver(this->connectfd, this->packetQueue);
-        switch (role) {
+        
+        //define using handler basing on interacting role
+        switch (iwRole) {
             case CLIENTROLE:
-                handler = (Handler*)new IWClientHandler(this->connectfd,this->packetQueue);
+                handler = (Handler*)new IWClientHandler(this->connectfd, this->packetQueue);
                 break;
             case ROOMROLE:
-                
-            break;
+                handler = (Handler*)new IWRoomHandler(this->connectfd, this->packetQueue);
+                break;
             default:
                 break;
         }
     }
-    ~IWSingleRoleThread(){
+    ~IWSingleRoleThread(){      //destructor
         delete packetQueue;
         delete receiver;
         delete handler;
     }
     
-    void run();
-    void* newReceiver(void*);
-    void* newHandler(void*);
+    void run();     //run intercating thread
+    void* runReceiver(void*);   //run a new receiver
+    void* runHandler(void*);    //run a new handler
 };
 
 #endif /* IWSingleRoleThread_hpp */

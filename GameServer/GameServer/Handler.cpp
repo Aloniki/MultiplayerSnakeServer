@@ -8,6 +8,11 @@
 
 #include "Handler.hpp"
 
+/**
+ *  pick the top data packet from the queue
+ *
+ *  @return return value description
+ */
 DataPacket Handler::pickFromPacketQueue(){
     auto packet = this->packetQueue->front();
     this->packetQueue->pop();

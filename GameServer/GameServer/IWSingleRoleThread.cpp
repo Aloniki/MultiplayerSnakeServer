@@ -9,18 +9,27 @@
 
 #include "IWSingleRoleThread.hpp"
 
+/**
+ *  thread recall wrappers, they are used to call true handle methods
+ *
+ *  @param arg this
+ *
+ *  @return void
+ */
 void* receiverThreadWrapper(void* arg){
     IWSingleRoleThread* pthis = (IWSingleRoleThread*)arg;
-    pthis->newReceiver(NULL);
+    pthis->runReceiver(NULL);
     pthread_exit(NULL);
 }
-
 void* handlerThreadWrapper(void* arg){
     IWSingleRoleThread* pthis = (IWSingleRoleThread*)arg;
-    pthis->newHandler(NULL);
+    pthis->runHandler(NULL);
     pthread_exit(NULL);
 }
 
+/**
+ *  create new threads to run receiver & handler
+ */
 void IWSingleRoleThread::run(){
     pthread_create(&tidReceiver, NULL, receiverThreadWrapper, this);
     pthread_create(&tidHandler, NULL, handlerThreadWrapper, this);
@@ -29,12 +38,34 @@ void IWSingleRoleThread::run(){
     pthread_join(tidHandler, NULL);
 }
 
-void* IWSingleRoleThread::newReceiver(void* arg){
+/**
+ *  run the receiver
+ *
+ *  @param arg void
+ *
+ *  @return void
+ */
+void* IWSingleRoleThread::runReceiver(void* arg){
     this->receiver->receive();
     return (void*)0;
 }
-
-void* IWSingleRoleThread::newHandler(void* arg){
+/**
+ *  run the handler
+ *
+ *  @param arg void
+ *
+ *  @return void
+ */
+void* IWSingleRoleThread::runHandler(void* arg){
     this->handler->handle();
     pthread_exit(NULL);
 }
+
+
+
+
+
+
+
+
+

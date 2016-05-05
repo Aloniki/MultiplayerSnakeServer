@@ -14,6 +14,8 @@
 class IWRoomHandler : Handler {
     
 public:
+    IWRoomHandler(int fd, std::queue<DataPacket>* packetQueue) : Handler(fd, packetQueue){
+    }
     void handle();
 };
 

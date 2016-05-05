@@ -23,13 +23,23 @@
 #define ROLELENGTH 1
 #define TYPELENGTH 1
 //define roles
-#define SERVERROLE 0
-#define CLIENTROLE 1
-#define ROOMROLE 2
+#define SERVERROLE 1
+#define CLIENTROLE 2
+#define ROOMROLE 4
 #define STRINGTYPE 1
 //define the offset of the char '0' to the num 0 in standard ASCII
 #define ASCIINUMOFFSET 48
 
+/**
+ Operation Types
+ */
+enum OperationSignal{
+    INVALID     =  -1,
+    EXIT        =   0,
+    REQUIRE     =   1,
+    CREATE      =   2,
+    JOIN        =   3,
+};
 /**
  *  Use to record the role, type and raw string from a data packet
  */
@@ -39,6 +49,9 @@ struct DataPacket{
     std::string rawStr;
 };
 
+/**
+ *  this class defines two static methods to pack raw data or unpack to data packets
+ */
 class DataPacketProtocol{
 public:
     static std::string Pack(int role, int type, std::string* rawStr);
